@@ -1,5 +1,6 @@
 import pandas as pd
 from os import system
+from time import sleep 
 
 class Mahasiswa():
 
@@ -72,6 +73,7 @@ class Mahasiswa():
         print(df)
         print("="*50)
         print()
+        lanjut = input("Ketik apapun untuk lanjut! ")
 
     def hapus_data(self, index):
         """
@@ -133,15 +135,18 @@ while (True):
  
     if (pilih == 1):
         tambah()
+        sleep(0.5)
         
     elif (pilih == 2):
         mahasiswa.tampilkan_data()
         
     elif (pilih == 3):
         hapus()
+        sleep(0.5)
         
     elif (pilih == 4):
         mahasiswa.ekspor_data()
+        sleep(1)
         
     elif (pilih == 5):
         print("Keluar dari program!")
@@ -149,3 +154,4 @@ while (True):
         
     else:
         print("Tidak ada pilihan!")
+        sleep(1)
