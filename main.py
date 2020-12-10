@@ -1,4 +1,5 @@
 import pandas as pd
+from os import system
 
 class Mahasiswa():
 
@@ -64,6 +65,7 @@ class Mahasiswa():
         """
         df = pd.DataFrame(self.data)
         
+        clear()
         print("="*50)
         print("Data Nilai Akhir Mahasiswa".center(50,' '))
         print("="*50)
@@ -87,7 +89,11 @@ class Mahasiswa():
         print("Data telah diekspor ke dalam file CSV!")
 
 # function
+def clear():
+    system('cls')
+    
 def get_option():
+    clear()
     print("="*50)
     print("Program Pendataan Nilai Akhir Mahasiswa".center(50,' '))
     print("="*50)
