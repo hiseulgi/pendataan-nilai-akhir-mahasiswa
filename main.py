@@ -1,3 +1,23 @@
+import pandas as pd
+
+class Mahasiswa():
+
+    def __init__(self):
+        self.data = []
+        self.jumlah = 0
+
+    def tambah_data(self, nama, nim, nil_tugas, nil_uts, nil_uas):
+        
+        self.data.append({'Nama':nama,
+                    'NIM':nim,
+                    'Tugas':nil_tugas,
+                    'UTS':nil_uts,
+                    'UAS':nil_uas,
+                    'Nilai Akhir':'',
+                    'Predikat':''})
+        
+        self.jumlah += 1
+
 # function
 def get_option():
     print("="*50)
