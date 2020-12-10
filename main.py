@@ -98,3 +98,27 @@ def hapus():
     index = int(input("Masukkan Index Data \t: "))
     mahasiswa.hapus_data(index)
     print("Data pada index ke-", index, "telah terhapus!")
+   
+# main program
+mahasiswa = Mahasiswa()
+while (True):
+    pilih = get_option()
+ 
+    if (pilih == 1):
+        tambah()
+        
+    elif (pilih == 2):
+        mahasiswa.tampilkan_data()
+        
+    elif (pilih == 3):
+        hapus()
+        
+    elif (pilih == 4):
+        mahasiswa.ekspor_data()
+        
+    elif (pilih == 5):
+        print("Keluar dari program!")
+        break
+        
+    else:
+        print("Tidak ada pilihan!")
