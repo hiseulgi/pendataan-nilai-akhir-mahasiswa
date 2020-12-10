@@ -80,3 +80,21 @@ def get_option():
     pilih = int(input("Masukkan pilihan : "))
     print()
     return pilih
+
+def tambah():
+    print("1. Tambahkan Data")
+    nama = input("Nama\t\t: ")
+    nim = int(input("NIM\t\t: "))
+    nil_tugas = int(input("Nilai Tugas\t: "))
+    nil_uts = int(input("Nilai UTS\t: "))
+    nil_uas = int(input("Nilai UAS\t: "))
+    
+    mahasiswa.tambah_data(nama, nim, nil_tugas, nil_uts, nil_uas)
+    mahasiswa.hitung_nilai_akhir()
+    mahasiswa.cari_predikat()
+ 
+def hapus():
+    print("3. Hapus Data")
+    index = int(input("Masukkan Index Data \t: "))
+    mahasiswa.hapus_data(index)
+    print("Data pada index ke-", index, "telah terhapus!")
