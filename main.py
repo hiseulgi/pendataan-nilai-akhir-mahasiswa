@@ -3,11 +3,16 @@ import pandas as pd
 class Mahasiswa():
 
     def __init__(self):
+        """
+        inisialisasi class
+        """
         self.data = []
         self.jumlah = 0
 
     def tambah_data(self, nama, nim, nil_tugas, nil_uts, nil_uas):
-        
+        """
+        menambahkan data mahasiswa ke dalam list
+        """
         self.data.append({'Nama':nama,
                     'NIM':nim,
                     'Tugas':nil_tugas,
@@ -18,8 +23,12 @@ class Mahasiswa():
         
         self.jumlah += 1
         
-            def hitung_nilai_akhir(self):
-
+    def hitung_nilai_akhir(self):
+        """
+        menghitung nilai akhir berdasarkan rumus
+        nil_akhir = nil_tugas * 0.3 + nil_uts * 0.3 + nil_uas * 0.4
+        dan memasukkannya ke dalam list
+        """
         index = self.jumlah - 1
         tugas = self.data[index]['Tugas'] * 0.3
         uts = self.data[index]['UTS'] * 0.3
@@ -29,7 +38,10 @@ class Mahasiswa():
         self.data[index]['Nilai Akhir'] = nil_akhir
 
     def cari_predikat(self):
-
+        """
+        menghitung predikat berdasarkan nilai akhir
+        dan memasukkannya ke dalam list
+        """
         index = self.jumlah - 1
         nil_akhir = self.data[index]['Nilai Akhir']
 
@@ -47,6 +59,9 @@ class Mahasiswa():
         self.data[index]['Predikat'] = predikat
 
     def tampilkan_data(self):
+        """
+        menampilkan data-data mahasiswa
+        """
         df = pd.DataFrame(self.data)
         
         print("="*50)
@@ -57,9 +72,15 @@ class Mahasiswa():
         print()
 
     def hapus_data(self, index):
+        """
+        menghapus data mahasiswa
+        """
         del self.data[index]
 
     def ekspor_data(self):
+        """
+        mengekspor file ke dalam file csv
+        """
         df = pd.DataFrame(self.data)
 
         df.to_csv('data_mahasiswa.csv', mode='a', index=False, encoding="utf-8")
