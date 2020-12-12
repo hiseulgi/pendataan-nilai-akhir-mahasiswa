@@ -92,9 +92,11 @@ class Mahasiswa():
 
 # function
 def clear():
+    # fungsi membersihkan layar
     system('cls')
     
 def get_option():
+    # fungsi menampilkan menu utama
     clear()
     print("="*50)
     print("Program Pendataan Nilai Akhir Mahasiswa".center(50,' '))
@@ -111,6 +113,7 @@ def get_option():
     return pilih
 
 def tambah():
+    # fungsi menambah data mahasiswa
     print("1. Tambahkan Data")
     nama = input("Nama\t\t: ")
     nim = int(input("NIM\t\t: "))
@@ -123,6 +126,7 @@ def tambah():
     mahasiswa.cari_predikat()
  
 def hapus():
+    # fungsi menghapus data mahasiswa
     print("3. Hapus Data")
     index = int(input("Masukkan Index Data \t: "))
     mahasiswa.hapus_data(index)
