@@ -80,6 +80,7 @@ class Mahasiswa():
         menghapus data mahasiswa
         """
         del self.data[index]
+        self.jumlah -= 1
 
     def ekspor_data(self):
         """
